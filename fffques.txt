@@ -1,0 +1,40 @@
+Q> Starting with the least, arrange these parts of a normal human body according to their number in increasing order - 
+   A) Hair			B) Teeth
+   C) Ears			D) Nails.
+
+Q> Starting from Phalguna, arrange these hindu festivals in the order they occur in a calendar year - 
+   A) Raksha Bandhan		B) Makar Sankranti
+   C) Vijaydashmi 		D) Holi.
+	
+Q> Starting with the biggest, arrange these astronomical bodies of the Solar System in decreasing order of their size - 
+   A) Earth			B) Jupiter 
+   C) Sun			D) Moon.
+
+Q> Arrange these films in increasing order of number mentioned in their titles - 
+   A) 2 States 			B) Ek Villian
+   C) 7 Khoon Maaf		D) 3 Idiots.
+
+Q> Arrange these units of time in decreasing order - 
+   A) Millennium		B) Year
+   C) Decade			D) Century.
+
+Q> Starting with the least expensive, arrange in increasing order - 
+   A) Unit of Electricity	B) Litre of Petrol
+   C) LPG Cylinder		D) Litre of Water.
+
+Q> Starting with the closest, arrange these planets in increasing order of their distance from the sun - 
+   A) Jupiter			B) Earth
+   C) Mars			D) Mercury.
+
+Q> Arrange these words in increasing order of number represented in them - 
+   A) Pandav			B) Eklavya 
+   C) Triguna			D) Ashtsiddhi.
+
+Q> Starting with the earliest, arrange these achievements of a student's life in correct order - 
+   A) BTech			B) PhD
+   C) Matriculation  		D) MTech.
+
+Q> Arrange these lyrics of song picturised on and sung by Ominem (Om Prakash Mishra) - 
+   A) Bol Na			B) Aunty
+   C) Aau			D) Kya
+  

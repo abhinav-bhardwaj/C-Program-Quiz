@@ -1,0 +1,142 @@
+Q> C is 
+   A) A third gen high level language	B) A machine language
+   C) An assembly language		D) All of above$
+
+Q> Web pages are written using 
+   A) FTP				B) HTTP
+   C) HTML      			D) URL$
+
+Q> What is the full form of IP ?
+   A) Interface Program			B) Interface Protocol
+   C) Internet Program			D) Internet Protocol$
+
+Q> What is the primary requisite of a good Computer Programmer ?
+   A) Mathematical Mind			B) Artistic Mind
+   C) Logical Mind 			D) Scientific Knowledge$
+
+Q> One byte is equivalent to 
+   A) 4 bits				B) 8 bits
+   C) 12 bits				D) 32 bits$			
+
+Q> Which of the following is not an Operating System ?
+   A) Dos				B) Unix
+   C) Linux				D) Java$
+
+Q> India's first Super Computer was 
+   A) Bhaskara 				B) Aryabhatta
+   C) Param				D) Chanakya$
+
+Q> When the Computer is switched on, the booting process performs the 
+   A) Integrity Test 			B) POST
+   C) Correct Funtioning Test  		D) Reliability Test$
+
+Q> The Theory of General Relativity was given by
+   A) Darwin				B) Einstein
+   C) Newton  				D) Mendel$
+
+Q> The most abundant element on the earth crust is
+   A) Calcium 				B) Aluminium
+   C) Silicon				D) Oxygen$
+
+Q> Who discovered the Neutron ?
+   A) JJ Thomson			B) Niels Bohr
+   C) James Chadwick			D) Ernest Rutherford$
+
+Q> Human bone does not contains 
+   A) Calcium				B) Carbon
+   C) Phosphorus			D) Oxygen$
+
+Q> Which of the following is called Laughing Gas popularly ?
+   A) Nitric Oxide			B) Nitrous Oxide
+   C) Nitogen Pentaoxide		D) Nitrogen$
+
+Q> "Atom can neither be created nor be destroyed" - This principle was given by 
+   A) Dalton				B) Bohr
+   C) Rutherford			D) Mendeleev$
+
+Q> Which metal remains in liquid state under the normal conditions ?
+   A) Lithium				B) Radium
+   C) Uranium				D) Mercury$
+
+Q> In India, who laid the foundation of Nuclear Science ?
+   A) JC Bose				B) HC Verma
+   C) Homi J Bhabha             	D) APJ Abdul Kalam$
+
+Q> Which of these organs helps in maintaining sense of balance or equilibrium in our body ?
+   A) Nose  				B) Ears
+   C) Tounge				D) Lungs$
+
+Q> During which year did World War 1 begin ?
+   A) 1921				B) 1934
+   C) 1914				D) 1907$
+
+Q> Which of these rivers, does not originate in India ?
+   A) Brahmaputra			B) Ravi
+   C) Gomti				D) Krishna$
+
+Q> Hitler Party which came into power in 1933 is known as
+   A) Labour Party			B) Nazi Party
+   C) Ku-Klux-Khan			D) Democratic Party$
+
+Q> Friction can be reduced by changing motion of an oject from
+   A) Sliding to Rolling 		B) Rolling to Sliding
+   C) Dynamic to Static			D) None of these$
+
+Q> Escape Velocity of a rocket fired from earth towards moon, is the velocity to get rid of the
+   A) Moon's Gravitational Pull		B) Centripetal Force due to earth's motion
+   C) Earth's Gravitaional Pull		D) Pressure of Atmosphere$
+
+Q> Heavy Water is
+   A) Rain Water			B) Tritium Oxide
+   C) Hydrogen Peroxide			D) Deuterium Oxide$
+
+Q> Which of the gas out of following is not known as Green House Gas ? 
+   A) Methane				B) Hydrogen
+   C) Nitrous Oxide			D) Carbon dioxide$
+
+Q> Which of the following metals forms an 'amalgam' with other metals ? 
+   A) Anitmony				B) Arsenic
+   C) Mercury				D) Lead$
+
+Q> Most soluble in water
+   A) Sugar				B) Camphor
+   C) Mercury				D) Common Salt$
+
+Q> Light Year is a unit of
+   A) Time				B) Light
+   C) Intensity of Light		D) Distance$
+
+Q> One Watt Hour is equivalent to
+   A) 6.3x10^3 J			B) 6.3x10^(-3) J
+   C) 3.6x10^3 J			D) 3.6x10^(-3) J$
+
+Q> Oil raise up the wick in the lamp. The Principle involves
+   A) Diffusion of oil through the wick
+   B) Liquid State of oil
+   C) Volatility of oil
+   D) Capillary Action Phenomenon$
+
+Q> Of the following natural phenomenon, which one known in Sanskrit as "Deer's thrist" ?
+   A) Mirage				B) Halo
+   C) Earthshine			D) Rainbow$
+
+Q> Non-Stick cooking utensils are coated with
+   A) PVC				B) Black Paint
+   C) Teflon				D) Aluminium$
+
+Q> Which one of the following is used as lubricant
+   A) Silica				B) Mercury
+   C) Ether				D) Graphite$
+
+Q> For Galvanizing iron, which of the following metal is used ? 
+   A) Zinc				B) Copper
+   C) Lead				D) Aluminium$	
+ 			
+Q> Which of these countries is called 'The Land Of Rising Sun' ? 
+   A) China				B) Tibet
+   C) India 				D) Japan$
+
+Q> Which of these countries is called 'The Land of Midnight Sun' ?
+   A) Antartica				B) Norway
+   C) Switzerland			D) Zurich$
+
