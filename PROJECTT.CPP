@@ -1,24 +1,28 @@
 #include<fstream.h>
 #include<stdlib.h>
 #include<time.h>
+#include<ctype.h>
 #include<string.h>
 #include<stdio.h>
 #include<conio.h>
 class contestant
-{	char name[10],title[4];
+{	char name[15],title[4];
 	int age;
 	char gender;
   public:
+	contestant()
+	{	strcpy(name,"Anonymous");
+	}
 	void getdata(int n);
 	void titles();
-	char getname(int i)
-	{	return(name[i]);
+	char* getname()
+	{	return(name);
 	}
-	char gettitle(int k)
-	{       return(title[k]);
+	char* gettitle()
+	{       return(title);
 	}
 	char getgender()
-	{	return gender;
+	{	return(gender);
 	}
 };
 void contestant::titles()
@@ -40,19 +44,25 @@ class wcontestant
 	char origin[20];
 	char motive[50];
   public:
-	void mquiz();
+	int mquiz();
+	void mmquiz();
 	int mcheck(int muans,char msol[],int randsv,int i)
 	{       int flag=0;
-		if(muans==msol[randsv])
-		{       flag=0;
-			cout<<"\nCongrats... your answer is correct, you have won "<<amtwin(i)<<" !!";
-			cout<<"\nYou can now proceed to question no. "<<i+2;
-			getch();
-		}
-		else
-		{       flag=1;
-			cout<<"\nOhh... sorry but thats wrong answer, the correct answer is "<<msol[randsv];
-			getch();
+		if(i!=14)
+		{	if(muans==msol[randsv])
+			{       flag=0;
+				cout<<"\nCongrats... your answer is correct, you have won Rs.";
+				amtwin(i);
+				cout<<" !!";
+				cout<<"\nYou can now proceed to question no. "<<i+2<<" for Rs.";
+				amtwin(i+1);
+				getch();
+			}
+			else
+			{       flag=1;
+				cout<<"\nOhh... sorry but thats wrong answer, the correct answer is "<<msol[randsv];
+				getch();
+			}
 		}
 		return flag;
 	}
@@ -65,7 +75,7 @@ class wcontestant
 		cout<<"\nYou have to choose one of the 4 options.";
 		cout<<"\nEach correct answer will lead you to next step.";
 		cout<<"\nAnd any wrong answer will eliminate you from the play!!.";
-		cout<<"\nDon't Worry, there are some milestones on questions, like on ques 5,8 and 12.";
+		cout<<"\nDon't Worry, there are some milestones on questions, like on ques 6,9 and 12.";
 		cout<<"\nIf you pass them, then there is assurity that you will get that amount of money.";
 		cout<<"\nNow you are aware of all rules, so we will begin our main quiz";
 		getch();
@@ -82,20 +92,37 @@ class wcontestant
 		cout<<"Thats such a nice thought.";
 		cout<<"So, we will now begin our Main Quiz";
 		mrules();
-		mquiz();
+		if(mquiz()==0)
+			mmquiz();
+
 	}
-	char amtwin(int i)
-	{       char amtw[35];
+	void amtwin(int k)
+	{       long amtw[15];
 		ifstream amt("amt.dat",ios::in|ios::binary);
-		for(int j=0;j<=15;j++)
+		for(int j=0;j<15;j++)
 			amt>>amtw[j];
-		return amtw[i];
+		cout<<amtw[k];
+	}
+	void checkamt(int k)
+	{       long amtw[15];
+		ifstream amt("amt.dat",ios::in|ios::binary);
+		for(int j=0;j<15;j++)
+			amt>>amtw[j];
+		if(k==0)
+			cout<<"0";
+		else if(k<6)
+			cout<<amtw[0];
+		else if(k>=6&&k<12)
+			cout<<amtw[5];
+		else if(k>=12)
+			cout<<amtw[11];
 	}
 };
-void wcontestant::mquiz()
-{       char mask[35][300],msol[35],muans;
+int wcontestant::mquiz()
+{       int randsv[10],flag;
+	char mask[35][300],msol[35],muans;
 	ifstream mques("mques.txt",ios::in);
-	ifstream mans("mans.dat",ios::in|ios::binary);
+	ifstream mans("man.dat",ios::in|ios::binary);
 	for(int i=0;i<35;i++)
 	{	mques.getline(mask[i],300,'$');
 	}
@@ -105,24 +132,80 @@ void wcontestant::mquiz()
 	time_t r1;
 	unsigned int seedvalue=(unsigned)time(&r1);
 	srand(seedvalue);
-	for(i=0;i<15;i++)
+	for(i=0;i<10;i++)
 	{       clrscr();
-		int randsv=rand()%34;
+		randsv[i]=rand()%34;
+		if(i>0)
+		{	for(int j=0;j<i;j++)
+				if(randsv[i]==randsv[j])
+					randsv[i]=rand()%34;
+		}
 		cout<<"\nHere is your question no. "<<i+1;
-		cout<<"\n\n"<<mask[randsv]<<endl;
+		cout<<"\n\n"<<mask[randsv[i]]<<endl;
 		cout<<"\nANS> ";
 		cin>>muans;
-		if(muans>=97&&muans<=122)
-			muans+=32;
-		int flag=mcheck(muans,msol,randsv,i);
+		if(muans>=97&&muans<=100)
+			muans=muans-32;
+		flag=mcheck(muans,msol,randsv[i],i);
 		if(flag!=0)
 		{       cout<<"\nWell Played...";
-			cout<<"\nYou have won "<<amtwin(i)<<", we hope that you will fulfill your motive with this amount.";
+			cout<<"\nYou have won  Rs.";
+			checkamt(i);
+			cout<<", we hope that you will fulfill your motive with this amount.";
 			getch();
-			exit(0);
+			i=11;
 		}
 	}
-	getch();
+	if(i!=11)
+		return 0;
+	else if(i==11)
+		return 1;
+}
+void wcontestant::mmquiz()
+{       int randsv[5];
+	char mmask[40][300],mmsol[40],muans;
+	ifstream mmques("mmques.txt",ios::in);
+	ifstream mmans("mmans.dat",ios::in|ios::binary);
+	for(int i=10;i<40;i++)
+	{	mmques.getline(mmask[i],300,'$');
+	}
+	for(i=10;i<40;i++)
+	{	mmans>>mmsol[i];
+	}
+	time_t r1;
+	unsigned int seedval=(unsigned)time(&r1);
+	srand(seedval);
+	for(i=10;i<15;i++)
+	{	clrscr();
+		randsv[i]=(rand()%29)+11;
+		if(i>10)
+		{	for(int j=10;j<i;j++)
+				if(randsv[i]==randsv[j])
+					randsv[i]=(rand()%29)+11;
+		}
+		cout<<"\nHere is your question no. "<<i+1;
+		cout<<"\n\n"<<mmask[randsv[i]]<<endl;
+		cout<<"\nANS> ";
+		cin>>muans;
+		if(muans>=97&&muans<=100)
+			muans=muans-32;
+		int flag=mcheck(muans,mmsol,randsv[i],i);
+		if(flag!=0)
+		{       cout<<"\nWell Played...";
+			cout<<"\nYou have won  Rs.";
+			checkamt(i);
+			cout<<", we hope that you will fulfill your motive with this amount.";
+			getch();
+			i=16;
+		}
+	}
+	if(i==15)
+	{	clrscr();
+		cout<<"\n\t\tCONGRATULATIONS!!!";
+		cout<<"\nYou have won the quiz and the amount of Rs.70000000";
+		cout<<"\nNow you can do whatever you want to do with this amount.";
+		getch();
+	}
 }
 void contestant::getdata(int n)
 {	cout<<"\nEnter first name of contestant no. "<<n+1<<" : ";
@@ -140,7 +223,7 @@ void rules()
 	cout<<"\n\n\t\tRULES";
 	cout<<"\nAs the name suggests, this game is about the who gives the fastest answer.";
 	cout<<"\nI will ask you both only one question and four options, and you have to arrange options in correct order by only using A, B, C and D.";
-	cout<<"\nFor Example : ";
+	cout<<"\n\n\bFor Example : ";
 	cout<<"\nQ> Arrange the following human body parts in the order they come in human body from top to bottom : ";
 	cout<<"\nA) Adam's Apple\t\tB) Retina\nC) Abdomen\t\tD) Ventricles";
 	cout<<"\n\nANS> BADC";
@@ -157,15 +240,17 @@ void fdback(time_t t[])
 int checkwin(char sol[],char check[10][5],int rands)
 {    int flag=-1;
      for(int i=0;i<4;i++)
-     {	if(sol[i]==check[rands][i])
-		flag=0;
-	else
-		flag=-1;
+     {	if(islower(sol[i]));
+		sol[i]=toupper(sol[i]);
      }
-     if(flag==0)
+     if(strcmpi(sol,check[rands])==0)
+     {	flag=0;
 	cout<<"\nCorrect Answer!!";
+     }
      else
-	cout<<"\nOops!! Incorrect Answer\nBetter Luck Next Time";
+     {	flag=-1;
+	cout<<"\nOops!! Incorrect Answer\nThe Correct Answer is "<<check[rands]<<"\nBetter Luck Next Time";
+     }
      return flag;
 }
 int fffq()
@@ -207,23 +292,17 @@ int fff(char name[])
 }
 void main()
 {       clrscr();
-	int j=0,m=1,time[2],win,lose;
-	char contname[2][10],g[2][1],t[2][4];
+	int time[2],win,lose,check=0;
+	char contname[2][10],t[2][4];
 	cout<<"\a\t\tWELCOME TO THE QUIZ SHOW!!! (Press Enter to continue)";
 	getch();
-	cout<<"\nSo, this quiz is only for two contestants";
+	cout<<"\nThis quiz is only for two contestants";
 	cout<<"\nOk, so who are those two lucky persons?\n";
 	contestant c[2];
 	for(int i=0;i<2;i++)
 	{	c[i].getdata(i);
-		for(;j<m;j++)
-		{       for(int k=0;k<10;k++)
-				contname[j][k]=c[i].getname(k);
-			for(int l=0;l<4;l++)
-				t[j][l]=c[i].gettitle(l);
-		}
-		g[i][0]=c[i].getgender();
-		m++;
+		strcpy(contname[i],c[i].getname());
+		strcpy(t[i],c[i].gettitle());
 	}
 	clrscr();
 	cout<<"\nFirst of all one of you have to pass FASTEST FINGER FIRST TEST";
@@ -243,7 +322,8 @@ void main()
 		{	win=1,lose=0;
 		}
 		else if(time[0]==time[1])
-		{	cout<<"You both have taken same time in Test";
+		{       check=1;
+			cout<<"You both have taken same time in Test";
 			cout<<", therefore it is a DRAW";
 		}
 		if(time[0]<time[1]||time[1]<time[0])
@@ -252,20 +332,27 @@ void main()
 		}
 	}
 	else if(time[0]==-1&&time[1]==-1)
+	{       check=1;
 		cout<<"You both have answered wrong answers, therefore none of you will be promoted";
+	}
 	else if(time[0]==-1||time[1]==-1)
 	{	if(time[0]==-1)
-			win=1;lose=0;
-		if(time[1]==-1)
-			win=0;lose=1;
+		{	win=1;lose=0;
+		}
+		else if(time[1]==-1)
+		{	win=0;lose=1;
+		}
 		cout<<contname[lose]<<" had given wrong answer, therefore "<<contname[win]<<" is automatically promoted to main quiz";
 	}
 	getch();
 	clrscr();
-	if(!(time[0]==-1&&time[1]==-1))
+	if((time[0]!=-1||time[1]!=-1)&&check==0)
 	{	wcontestant wcont;
 		wcont.wgetdata(contname[win],t[win]);
 	}
-	cout<<"\n\n\\t\t\bThanks for Playing";
+	clrscr();
+	cout<<"\n\n\t\tThanks for Playing";
+	cout<<"\n\n\tCREDITS";
+	cout<<"\n\n\tABHINAV DUBEY";
 	getch();
 }
